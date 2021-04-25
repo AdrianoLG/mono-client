@@ -1,0 +1,35 @@
+version: '3'
+services:
+  dev:
+    container_name: mono-front-dev
+    command: >
+      sh -c "echo \"** Serving at port ${SERVER_ENV_PORT} (http://localhost:${SERVER_ENV_PORT}) **\"
+      && npm run dev"
+    build:
+      context: .
+      target: development
+    ports:
+      - ${SERVER_ENV_PORT}:${SERVER_PORT}
+    env_file:
+      - .env
+    volumes:
+      - ./:/mono/src/app
+      - /mono/src/app/node_modules
+  prod:
+    container_name: mono-front
+    command: >
+      sh -c "npm test
+      && npm run lint
+      && npm run build
+      && echo \"** Serving at port ${SERVER_PROD_PORT} (http://localhost:${SERVER_PROD_PORT}) **\"
+      && npm run start:prod"
+    restart: always
+    build:
+      context: .
+      target: production
+    ports:
+      - ${SERVER_PROD_PORT}:${SERVER_PORT}
+    env_file:
+      - .env
+    volumes:
+      - ./:/mono/src/app
