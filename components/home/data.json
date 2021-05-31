@@ -1,0 +1,35 @@
+[
+  {
+    "id": "012021",
+    "name": "Enero 2021",
+    "rows": [
+      {
+        "id": 1,
+        "type": "income",
+        "category": "Ingreso",
+        "icon": "coin",
+        "description": "Ingreso nómina",
+        "estimated": 2280,
+        "real": 2280
+      },
+      {
+        "id": 2,
+        "type": "expense",
+        "category": "Hipoteca",
+        "icon": "mortgage",
+        "description": "Casa enero '21",
+        "estimated": 900,
+        "real": 900
+      },
+      {
+        "id": 3,
+        "type": "expense",
+        "category": "Tabaco",
+        "icon": "tobacco",
+        "description": "Tabaco",
+        "estimated": 30,
+        "real": 11.5
+      }
+    ]
+  }
+]

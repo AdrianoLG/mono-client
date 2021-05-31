@@ -1,62 +1,40 @@
+import Month from '../components/home/Month'
+import Favicon from '../components/Favicon'
+import Navbar from '../components/header/Navbar'
 import Head from 'next/head'
 import '../styles/Home.module.css'
+import Form from '../components/home/Form'
 
 function Home() {
   return (
-    <div className="container">
+    <>
       <Head>
         <title>Mono</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon/favicon.ico" />
+        <Favicon />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/favicon/apple-touch-icon.png"
+          href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=Righteous&display=swap"
+          rel="stylesheet"
         />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon/favicon-32x32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon/favicon-16x16.png"
-        />
-        <link rel="manifest" href="/favicon/site.webmanifest" />
-        <link
-          rel="mask-icon"
-          href="/favicon/safari-pinned-tab.svg"
-          color="#5bbad5"
-        />
-        <link rel="shortcut icon" href="/favicon/favicon.ico" />
-        <meta name="msapplication-TileColor" content="#da532c" />
-        <meta
-          name="msapplication-config"
-          content="/favicon/browserconfig.xml"
-        />
-        <meta name="theme-color" content="#ffffff" />
       </Head>
-      <div className="py-12 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="lg:text-center">
-            <h2 className="text-base text-indigo-600 font-semibold tracking-wide">
-              NextJS, TypeScript, TailwindCSS, Jest, Docker, Github
-              Actions
-            </h2>
-            <h1 className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-              Mono App
-            </h1>
-            <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-              Lorem ipsum dolor sit amet consect adipisicing elit.
-              Possimus magnam voluptatum cupiditate veritatis in
-              accusamus quisquam.
-            </p>
-          </div>
+      <div className="bg-body-bg h-screen">
+        <Navbar />
+        <div className="container">
+          <main className="px-4 flex">
+            <div className="left w-8/12">
+              <Month />
+              <Month />
+              <Month />
+            </div>
+            <div className="w-1/12"></div>
+            <div className="right w-3/12">
+              <Form />
+            </div>
+          </main>
         </div>
       </div>
-    </div>
+    </>
   )
 }
 
